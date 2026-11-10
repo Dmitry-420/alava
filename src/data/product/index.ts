@@ -1,4 +1,4 @@
-export const product = {
+﻿export const product = {
   name: "Надувная SUP-доска PRONINE 11'6″ Alava",
   brand: 'PRONINE',
   model: "Alava 11'6″",
@@ -32,8 +32,8 @@ export const images = {
   boardBag: '/media/projects/12634/xlornhYQ8.webp',
   womanPaddle: '/media/projects/12634/pxxpknYQ9.webp',
   side: '/media/projects/12634/bnunzxYQA.webp',
-  magnetBlack: '/media/projects/12634/enytxnYQB.jpg',
-  kit: '/media/projects/12634/vikzwiYQC.jpg',
+  magnetBlack: '/media/projects/12634/enytxnYQB.webp',
+  kit: '/media/projects/12634/vikzwiYQC.webp',
 };
 
 export const highlights = [
