@@ -22,18 +22,18 @@
 };
 
 export const images = {
-  deck: `${import.meta.env.BASE_URL}media/projects/12634/srnxehYQ2.webp`,
-  hero: `${import.meta.env.BASE_URL}media/projects/12634/msckfrYQv.webp`,
-  heroOld: `${import.meta.env.BASE_URL}media/projects/12634/hrztyrYQ3.webp`,
-  magnetClose: `${import.meta.env.BASE_URL}media/projects/12634/bezvraYQ4.webp`,
-  manPaddle: `${import.meta.env.BASE_URL}media/projects/12634/txirfjYQ5.webp`,
-  infographic: `${import.meta.env.BASE_URL}media/projects/12634/qqskqdYQ6.webp`,
-  boardBeach: `${import.meta.env.BASE_URL}media/projects/12634/kppacsYQ7.webp`,
-  boardBag: `${import.meta.env.BASE_URL}media/projects/12634/xlornhYQ8.webp`,
-  womanPaddle: `${import.meta.env.BASE_URL}media/projects/12634/pxxpknYQ9.webp`,
-  side: `${import.meta.env.BASE_URL}media/projects/12634/bnunzxYQA.webp`,
-  magnetBlack: `${import.meta.env.BASE_URL}media/projects/12634/enytxnYQB.webp`,
-  kit: `${import.meta.env.BASE_URL}media/projects/12634/vikzwiYQC.webp`,
+  deck: `${import.meta.env.BASE_URL}/media/projects/12634/srnxehYQ2.webp`,
+  hero: `${import.meta.env.BASE_URL}/media/projects/12634/msckfrYQv.webp`,
+  heroOld: `${import.meta.env.BASE_URL}/media/projects/12634/hrztyrYQ3.webp`,
+  magnetClose: `${import.meta.env.BASE_URL}/media/projects/12634/bezvraYQ4.webp`,
+  manPaddle: `${import.meta.env.BASE_URL}/media/projects/12634/txirfjYQ5.webp`,
+  infographic: `${import.meta.env.BASE_URL}/media/projects/12634/qqskqdYQ6.webp`,
+  boardBeach: `${import.meta.env.BASE_URL}/media/projects/12634/kppacsYQ7.webp`,
+  boardBag: `${import.meta.env.BASE_URL}/media/projects/12634/xlornhYQ8.webp`,
+  womanPaddle: `${import.meta.env.BASE_URL}/media/projects/12634/pxxpknYQ9.webp`,
+  side: `${import.meta.env.BASE_URL}/media/projects/12634/bnunzxYQA.webp`,
+  magnetBlack: `${import.meta.env.BASE_URL}/media/projects/12634/enytxnYQB.webp`,
+  kit: `${import.meta.env.BASE_URL}/media/projects/12634/vikzwiYQC.webp`,
 };
 
 export const highlights = [
