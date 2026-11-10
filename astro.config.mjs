@@ -27,8 +27,8 @@ function projectArchive() {
 }
 
 export default defineConfig({
-  site: 'https://Dmitry-420.github.io',
-  base: '/alava',
+  site: 'http://sup.pronine.ru',
+  
   integrations: [vue(), icon()],
   vite: {
     plugins: [tailwindcss()],
