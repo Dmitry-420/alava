@@ -1,0 +1,54 @@
+---
+import { Icon } from 'astro-icon/components';
+import { images } from '../data/product';
+---
+
+<section id="magnet" class="relative overflow-hidden bg-abyss-900/40">
+  <div class="mx-auto grid max-w-6xl items-center gap-14 px-5 py-20 lg:grid-cols-2">
+    <div class="relative">
+      <img
+        src={images.magnetClose}
+        alt="Встроенный магнитный держатель MAGNET HOLDER на деке SUP-доски"
+        class="w-full rounded-[2rem] border border-white/10 object-cover"
+        loading="lazy"
+      />
+      <img
+        src={images.magnetBlack}
+        alt="Магнитный держатель для термоса и металлических аксессуаров"
+        class="absolute -bottom-12 -right-4 hidden w-48 rounded-2xl border border-white/10 object-cover shadow-2xl lg:block"
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <p class="eyebrow">MAGNET HOLDER</p>
+      <h2 class="section-title mt-4">Всё под рукой — и ничего не мешает гребли</h2>
+      <p class="mt-5 text-mist-200">
+        Встроенный мощный неодимовый магнит надёжно фиксирует термосы и металлические аксессуары прямо на
+        деке. Это не просто деталь, а фирменная экосистема удобства: магнитные держатели и блютуз-колонка
+        для сапборда уже доступны к этой модели.
+      </p>
+
+      <ul class="mt-8 space-y-4">
+        <li class="flex gap-4">
+          <Icon name="lucide:magnet" class="mt-0.5 h-5 w-5 shrink-0 text-flame-400" />
+          <span class="text-mist-200">
+            Термос, телефон и металлические аксессуары закрепляются без липучек и стяжек.
+          </span>
+        </li>
+        <li class="flex gap-4">
+          <Icon name="lucide:waves" class="mt-0.5 h-5 w-5 shrink-0 text-flame-400" />
+          <span class="text-mist-200">
+            Магнит встроен в деку — гребля остаётся свободной на всей длине борда.
+          </span>
+        </li>
+        <li class="flex gap-4">
+          <Icon name="lucide:package" class="mt-0.5 h-5 w-5 shrink-0 text-flame-400" />
+          <span class="text-mist-200">
+            Две карго-системы держат гермомешок и снаряжение, пока вы идёте на глиссе.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

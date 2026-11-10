@@ -1,0 +1,80 @@
+---
+import { Icon } from 'astro-icon/components';
+import { images, product } from '../data/product';
+---
+
+<section id="top" class="relative overflow-hidden">
+  <div class="pointer-events-none absolute -top-48 right-[-12%] h-[560px] w-[560px] rounded-full bg-water-500/20 blur-3xl"></div>
+
+  <div
+    class="mx-auto grid max-w-6xl items-center gap-14 px-5 pb-16 pt-10 lg:grid-cols-[1.05fr_0.95fr] lg:pb-24 lg:pt-16"
+  >
+    <div>
+      <p class="eyebrow">Надувная SUP-доска · Pronine · 2026</p>
+      <h1 class="mt-5 text-4xl leading-[0.92] sm:text-6xl">
+        PRONINE <span class="text-gradient">11'6″ Alava</span>
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-mist-200">
+        Двухслойный SUP с технологией MAGNET HOLDER: жёсткость MSL Fusion, курсовая устойчивость и
+        магнит, который держит термос и аксессуары прямо на деке — не мешая гребли.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <span class="chip">350 × 84 × 15 см</span>
+        <span class="chip">Нагрузка до 200 кг</span>
+        <span class="chip">До 18 PSI</span>
+        <span class="chip">Double Layer MSL Fusion</span>
+      </div>
+
+      <div
+        class="mt-10 flex flex-col gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <p class="text-sm text-mist-300 line-through">{product.oldPrice}</p>
+          <p class="font-display text-4xl text-white">{product.price}</p>
+          <p class="mt-1 text-xs uppercase tracking-[0.2em] text-flame-300">Акция · в наличии</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href={product.buyUrl} target="_blank" rel="noopener" class="btn-buy">
+            <Icon name="lucide:shopping-cart" class="h-5 w-5" />
+            Купить за {product.price}
+          </a>
+          <a href="#specs" class="btn-ghost">Смотреть характеристики</a>
+        </div>
+      </div>
+
+      <p class="mt-4 flex items-center gap-2 text-sm text-mist-300">
+        <Icon name="lucide:truck" class="h-4 w-4 shrink-0 text-water-300" />
+        Бесплатная доставка по всей России
+      </p>
+    </div>
+
+    <div class="relative">
+      <div
+        class="overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_50px_100px_-45px_rgba(17,137,214,0.85)]"
+      >
+        <img
+          src={images.hero}
+          alt="Райдерка на надувной SUP-доске PRONINE Alava 11'6 на воде"
+          width="900"
+          height="1200"
+          class="h-full w-full object-cover"
+        />
+      </div>
+
+      <div
+        class="absolute -bottom-7 -left-4 hidden rounded-2xl border border-white/10 bg-abyss-900/90 px-5 py-4 backdrop-blur sm:block"
+      >
+        <p class="font-display text-2xl text-white">18 PSI</p>
+        <p class="text-xs uppercase tracking-[0.2em] text-mist-300">MSL Fusion</p>
+      </div>
+
+      <div
+        class="absolute -right-2 top-8 rounded-2xl border border-flame-500/40 bg-abyss-900/90 px-5 py-4 backdrop-blur"
+      >
+        <p class="font-display text-2xl text-flame-400">200 кг</p>
+        <p class="text-xs uppercase tracking-[0.2em] text-mist-300">нагрузка</p>
+      </div>
+    </div>
+  </div>
+</section>

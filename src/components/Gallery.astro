@@ -1,0 +1,23 @@
+---
+import { gallery } from '../data/product';
+---
+
+<section id="gallery" class="mx-auto max-w-6xl px-5 py-20">
+  <p class="eyebrow">Галерея</p>
+  <h2 class="section-title mt-4 max-w-2xl">Alava на воде и на берегу</h2>
+
+  <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      gallery.map((item) => (
+        <figure class="overflow-hidden rounded-[1.75rem] border border-white/10">
+          <img
+            src={item.src}
+            alt={item.alt}
+            class="h-full w-full object-cover transition duration-500 hover:scale-105"
+            loading="lazy"
+          />
+        </figure>
+      ))
+    }
+  </div>
+</section>

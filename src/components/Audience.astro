@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon/components';
+import { audience } from '../data/product';
+---
+
+<section class="mx-auto max-w-6xl px-5 py-20">
+  <p class="eyebrow">Кому подойдёт</p>
+  <h2 class="section-title mt-4 max-w-2xl">Доска для прогулки, похода и рыбалки</h2>
+
+  <div class="mt-12 grid gap-5 md:grid-cols-3">
+    {
+      audience.map((item) => (
+        <article class="card p-7">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-flame-500/15 text-flame-300">
+            <Icon name={item.icon} class="h-6 w-6" />
+          </span>
+          <h3 class="mt-5 text-lg text-white">{item.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-mist-200">{item.text}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,94 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+const siteUrl = 'https://www.doskasveslom.ru';
+const canonical = `${siteUrl}/pronine-alava/`;
+const title = "Надувная SUP-доска PRONINE 11'6″ Alava — купить";
+const description =
+  "PRONINE Alava 11'6″: двухслойный ПВХ MSL Fusion 18 PSI, магнитный держатель MAGNET HOLDER, размер 350 × 84 см, нагрузка до 200 кг. Полный комплект.";
+const ogImage = 'https://www.doskasveslom.ru/wp-content/uploads/2025/07/sap-bord-ronine-alava.jpg';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: 'DOSKASVESLOM.RU',
+      url: `${siteUrl}/`,
+      telephone: '+7 (951) 904-92-68',
+      email: 'info@doskasveslom.ru',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Ошарская 95 Б, офис А6',
+        addressLocality: 'Нижний Новгород',
+        postalCode: '603105',
+        addressCountry: 'RU',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: `${siteUrl}/`,
+      name: 'DOSKASVESLOM.RU',
+      inLanguage: 'ru-RU',
+      publisher: { '@id': `${siteUrl}/#organization` },
+    },
+    {
+      '@type': 'Product',
+      name: "Надувная SUP-доска PRONINE 11'6″ Alava",
+      description,
+      image: [ogImage],
+      color: 'Синий',
+      material: 'ПВХ',
+      brand: { '@type': 'Brand', name: 'Pronine' },
+      offers: {
+        '@type': 'Offer',
+        url: 'https://www.doskasveslom.ru/cart/?add-to-cart=65283&quantity=1',
+        priceCurrency: 'RUB',
+        price: '17590',
+        availability: 'https://schema.org/InStock',
+        itemCondition: 'https://schema.org/NewCondition',
+        seller: { '@id': `${siteUrl}/#organization` },
+      },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="product" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="DOSKASVESLOM.RU" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Надувная SUP-доска PRONINE Alava 11'6″ на воде" />
+    <meta property="product:price:amount" content="17590" />
+    <meta property="product:price:currency" content="RUB" />
+    <meta property="product:availability" content="in stock" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="theme-color" content="#04121f" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

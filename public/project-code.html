@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PRONINE Alava 11'6 — код проекта</title>
+    <meta name="description" content="Полный код лендинга надувной SUP-доски PRONINE Alava: архив ZIP и просмотр исходников." />
+    <link rel="canonical" href="https://www.doskasveslom.ru/pronine-alava/project-code/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="DOSKASVESLOM.RU" />
+    <meta property="og:title" content="PRONINE Alava 11'6&quot; — код проекта" />
+    <meta property="og:description" content="Полный код лендинга надувной SUP-доски PRONINE Alava: архив ZIP и просмотр исходников." />
+    <meta property="og:url" content="https://www.doskasveslom.ru/pronine-alava/project-code/" />
+    <meta property="og:image" content="/media/projects/12634/msckfrYQv.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PRONINE Alava 11'6&quot; — код проекта" />
+    <meta name="twitter:description" content="Полный код лендинга надувной SUP-доски PRONINE Alava: архив ZIP и просмотр исходников." />
+    <meta name="twitter:image" content="/media/projects/12634/msckfrYQv.webp" />
+    <style>
+      :root {
+        --abyss: #04121f;
+        --abyss-2: #072035;
+        --water: #1189d6;
+        --flame: #f2482f;
+        --mist: #c9dcea;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 48px 20px 80px;
+        background:
+          radial-gradient(900px 520px at 85% -5%, rgba(17, 137, 214, 0.28), transparent 60%),
+          radial-gradient(700px 420px at 5% 12%, rgba(242, 72, 47, 0.16), transparent 62%),
+          var(--abyss);
+        color: #f5f9fc;
+        font: 15px/1.6 system-ui, -apple-system, 'Segoe UI', sans-serif;
+      }
+      .wrap { max-width: 980px; margin: 0 auto; }
+      h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: 0.02em; text-transform: uppercase; }
+      .sub { color: var(--mist); margin: 0 0 28px; }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+      .btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 13px 22px; border-radius: 999px; border: 1px solid rgba(201, 220, 234, 0.28);
+        color: #f5f9fc; text-decoration: none; font-weight: 600; cursor: pointer; background: transparent;
+      }
+      .btn-primary { background: var(--flame); border-color: var(--flame); }
+      .btn-primary:hover { background: #ff6a45; }
+      .btn:hover { border-color: var(--water); color: #86cef6; }
+      .btn-primary:hover { color: #fff; }
+      .status { color: var(--mist); font-size: 13px; margin-left: 4px; }
+      .file {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 18px; background: rgba(255, 255, 255, 0.04);
+        margin-bottom: 10px; overflow: hidden;
+      }
+      .file > summary {
+        cursor: pointer; padding: 14px 18px; font-weight: 600;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px;
+      }
+      .file > summary:hover { color: #86cef6; }
+      pre {
+        margin: 0; padding: 0 18px 18px; overflow-x: auto;
+        font: 13px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; color: #c9dcea;
+        white-space: pre;
+      }
+      footer { margin-top: 34px; color: var(--mist); font-size: 13px; }
+      a { color: #86cef6; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>PRONINE Alava 11'6&quot; — код проекта</h1>
+      <p class="sub">Полный исходный код лендинга: Astro + Tailwind CSS v4, шрифты self-hosted.</p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="./pronine-alava-project.zip" download>Скачать ZIP-архив проекта</a>
+        <a class="btn" href="./project-code.txt" download>Скачать весь код одним .txt</a>
+        <button class="btn" id="copy">Скопировать весь код</button>
+        <span class="status" id="status">Загрузка исходников…</span>
+      </div>
+
+      <div id="files"></div>
+
+      <footer>
+        Запуск локально: <code>bun install</code> → <code>bun run dev</code> (разработка) или
+        <code>bun run build</code> (сборка в <code>out/</code>). Изображения лежат в медиа-хранилище
+        проекта по путям <code>/media/projects/12634/…</code> — их нужно положить в
+        <code>public/media/</code> и заменить префикс в <code>src/data/product/index.ts</code>.
+      </footer>
+    </div>
+
+    <script>
+      const box = document.getElementById('files');
+      const status = document.getElementById('status');
+      let raw = '';
+
+      function render(text) {
+        raw = text;
+        const parts = text.split(/^={70,}\nFILE: (.+)\n={70,}\n/m);
+        const names = parts.filter((_, i) => i % 2 === 1);
+        const bodies = parts.filter((_, i) => i % 2 === 0).slice(1);
+        box.innerHTML = '';
+        names.forEach((name, i) => {
+          const details = document.createElement('details');
+          details.className = 'file';
+          const summary = document.createElement('summary');
+          summary.textContent = name;
+          const pre = document.createElement('pre');
+          pre.textContent = (bodies[i] || '').trim();
+          details.append(summary, pre);
+          box.append(details);
+        });
+        status.textContent = 'Файлов: ' + names.length;
+      }
+
+      fetch('./project-code.txt')
+        .then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
+        .then(render)
+        .catch(() => {
+          status.textContent = 'Исходники не найдены — скачайте ZIP-архив.';
+        });
+
+      document.getElementById('copy').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(raw);
+          status.textContent = 'Код скопирован в буфер обмена';
+        } catch {
+          status.textContent = 'Не удалось скопировать — скачайте .txt';
+        }
+      });
+    </script>
+  </body>
+</html>

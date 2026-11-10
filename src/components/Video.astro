@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon/components';
+import { product } from '../data/product';
+---
+
+<section id="video" class="relative overflow-hidden bg-abyss-900/40">
+  <div class="mx-auto max-w-6xl px-5 py-20">
+    <div class="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-center">
+      <div class="max-w-xl">
+        <p class="eyebrow">Видео</p>
+        <p class="mt-6 font-display text-xl uppercase leading-tight tracking-[0.1em] text-white">
+          Надувная SUP-доска PRONINE 11'6″ Alava
+        </p>
+        <p class="mt-3 max-w-lg text-sm leading-relaxed text-mist-300">
+          Мощь, комфорт и свобода в одной доске. Надёжная новинка 2026 года для спокойных прогулок и
+          длительных водных туров. Уникальная комплектация с двумя карго-системами, дополнительными
+          ручками и кольцами, а так же магнитным держателем.
+        </p>
+        <a
+          href={product.buyUrl}
+          target="_blank"
+          rel="noopener"
+          class="btn-ghost mt-8"
+        >
+          <Icon name="lucide:shopping-cart" class="h-4 w-4" />
+          Хочу такую доску
+        </a>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-[340px]">
+        <div
+          class="overflow-hidden rounded-[2rem] border border-white/15 bg-black shadow-[0_40px_90px_-30px_rgba(17,137,214,0.75)]"
+        >
+          <div class="aspect-[9/16] w-full">
+            <iframe
+              src={product.videoUrl}
+              width="360"
+              height="640"
+              frameborder="0"
+              allowfullscreen="1"
+              style="background-color: #000"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              title="Видео: надувная SUP-доска PRONINE Alava 11'6"
+              class="h-full w-full"
+            ></iframe>
+          </div>
+        </div>
+
+        <div
+          class="absolute -bottom-6 -left-8 hidden rounded-2xl border border-white/10 bg-abyss-900/90 px-5 py-4 backdrop-blur sm:block"
+        >
+          <p class="font-display text-2xl text-white">18 PSI</p>
+          <p class="text-xs uppercase tracking-[0.2em] text-mist-300">MSL Fusion</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

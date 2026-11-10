@@ -1,0 +1,85 @@
+---
+import { Icon } from 'astro-icon/components';
+import { product } from '../data/product';
+---
+
+<footer class="border-t border-white/10 bg-abyss-950/80">
+  <div class="mx-auto max-w-6xl px-5 pb-28 pt-16 md:pb-16">
+    <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div>
+        <p class="font-display text-lg tracking-[0.22em] text-white">PRONINE ALAVA 11'6″</p>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-mist-300">
+          Надувная SUP-доска с двухслойным ПВХ MSL Fusion, магнитным держателем MAGNET HOLDER и полным
+          комплектом для выхода на воду.
+        </p>
+        <a href={product.buyUrl} target="_blank" rel="noopener" class="btn-sm mt-6">
+          <Icon name="lucide:shopping-cart" class="h-4 w-4" />
+          Купить за {product.price}
+        </a>
+      </div>
+
+      <div>
+        <h3 class="text-sm uppercase tracking-[0.2em] text-water-300">Контакты</h3>
+        <ul class="mt-4 space-y-3 text-sm text-mist-300">
+          <li>
+            <a class="flex items-center gap-3 transition hover:text-white" href={product.shop.phoneHref}>
+              <Icon name="lucide:phone" class="h-4 w-4 shrink-0 text-water-300" />
+              {product.shop.phone}
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center gap-3 transition hover:text-white" href={`mailto:${product.shop.email}`}>
+              <Icon name="lucide:mail" class="h-4 w-4 shrink-0 text-water-300" />
+              {product.shop.email}
+            </a>
+          </li>
+          <li class="flex items-start gap-3">
+            <Icon name="lucide:map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-water-300" />
+            {product.shop.address}
+          </li>
+          <li class="flex items-start gap-3">
+            <Icon name="lucide:clock" class="mt-0.5 h-4 w-4 shrink-0 text-water-300" />
+            {product.shop.hours}
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm uppercase tracking-[0.2em] text-water-300">Магазин</h3>
+        <ul class="mt-4 space-y-3 text-sm text-mist-300">
+          <li>
+            <a class="flex items-center gap-3 transition hover:text-white" href={product.shop.whatsapp} target="_blank" rel="noopener">
+              <Icon name="lucide:message-circle" class="h-4 w-4 shrink-0 text-water-300" />
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center gap-3 transition hover:text-white" href={product.shop.telegram} target="_blank" rel="noopener">
+              <Icon name="lucide:send" class="h-4 w-4 shrink-0 text-water-300" />
+              Telegram
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center gap-3 transition hover:text-white" href={product.shop.vk} target="_blank" rel="noopener">
+              <Icon name="lucide:users" class="h-4 w-4 shrink-0 text-water-300" />
+              ВКонтакте
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center gap-3 transition hover:text-white" href={product.catalogUrl} target="_blank" rel="noopener">
+              <Icon name="lucide:shopping-bag" class="h-4 w-4 shrink-0 text-water-300" />
+              Все SUP-доски
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-mist-300 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>© {new Date().getFullYear()} SUP.PRONINE.RU</p>
+      <p>Надувная SUP-доска PRONINE 11'6″ Alava</p>
+    </div>
+  </div>
+</footer>

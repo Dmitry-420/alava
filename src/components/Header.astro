@@ -1,0 +1,38 @@
+---
+import { Icon } from 'astro-icon/components';
+import { product } from '../data/product';
+---
+
+<header class="sticky top-0 z-50 border-b border-white/10 bg-abyss-950/85 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5">
+    <a href="#top" class="flex items-center gap-3">
+      <span class="bg-brand grid h-10 w-10 place-items-center rounded-xl font-display text-sm tracking-wider text-white">PA</span>
+      <span class="leading-tight">
+        <span class="block font-display text-sm tracking-[0.22em] text-white">PRONINE</span>
+        <span class="block text-[11px] uppercase tracking-[0.2em] text-water-300">Alava 11'6</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-7 text-sm text-mist-200 lg:flex">
+      <a class="transition hover:text-water-300" href="#premium">Преимущества</a>
+      <a class="transition hover:text-water-300" href="#magnet">MAGNET HOLDER</a>
+      <a class="transition hover:text-water-300" href="#specs">Характеристики</a>
+      <a class="transition hover:text-water-300" href="#kit">Комплектация</a>
+      <a class="transition hover:text-water-300" href="#video">Видео</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a
+        href={product.shop.phoneHref}
+        class="hidden items-center gap-2 text-sm text-mist-200 transition hover:text-white sm:flex"
+      >
+        <Icon name="lucide:phone" class="h-4 w-4 text-water-300" />
+        {product.shop.phone}
+      </a>
+      <a href={product.buyUrl} target="_blank" rel="noopener" class="btn-sm">
+        <Icon name="lucide:shopping-cart" class="h-4 w-4" />
+        Купить
+      </a>
+    </div>
+  </div>
+</header>

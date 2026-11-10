@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon/components';
+import { product } from '../data/product';
+---
+
+<section id="buy" class="mx-auto max-w-6xl px-5 pb-24 pt-8">
+  <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-abyss-900/70 p-8 sm:p-12">
+    <div
+      class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-flame-500/20 blur-3xl"
+    >
+    </div>
+
+    <div class="relative grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+      <div>
+        <p class="eyebrow">В наличии</p>
+        <h2 class="section-title mt-4">Закажите PRONINE Alava 11'6″</h2>
+        <p class="mt-4 max-w-xl text-mist-200">
+          Отправляем по всей России, в Нижнем Новгороде можно забрать доску в шоуруме на Ошарской.
+        </p>
+        <ul class="mt-6 flex flex-wrap gap-3">
+          <li class="chip"><Icon name="lucide:truck" class="h-4 w-4" /> Доставка по России</li>
+          <li class="chip"><Icon name="lucide:shield-check" class="h-4 w-4" /> Гарантия 12 месяцев</li>
+          <li class="chip"><Icon name="lucide:package" class="h-4 w-4" /> Полный комплект</li>
+        </ul>
+      </div>
+
+      <div class="rounded-3xl border border-white/10 bg-abyss-950/60 p-7 text-center">
+        <p class="text-sm text-mist-300 line-through">{product.oldPrice}</p>
+        <p class="font-display text-4xl text-white">{product.price}</p>
+        <a href={product.buyUrl} target="_blank" rel="noopener" class="btn-buy mt-6 w-full">
+          <Icon name="lucide:shopping-cart" class="h-5 w-5" />
+          Купить
+        </a>
+        <p class="mt-4 text-xs uppercase tracking-[0.18em] text-mist-300">Переход в корзину магазина</p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-abyss-950/95 px-5 py-3 backdrop-blur md:hidden"
+  >
+    <div class="flex items-center justify-between gap-4">
+      <div>
+        <p class="font-display text-xl text-white">{product.price}</p>
+        <p class="text-[11px] uppercase tracking-[0.18em] text-mist-300">В наличии</p>
+      </div>
+      <a href={product.buyUrl} target="_blank" rel="noopener" class="btn-sm">
+        <Icon name="lucide:shopping-cart" class="h-4 w-4" />
+        Купить
+      </a>
+    </div>
+  </div>
+</section>

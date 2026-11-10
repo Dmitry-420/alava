@@ -1,0 +1,66 @@
+---
+import { Icon } from 'astro-icon/components';
+import { images, kit, specs } from '../data/product';
+---
+
+<section id="specs" class="mx-auto max-w-6xl px-5 py-20">
+  <p class="eyebrow">Характеристики и комплектация</p>
+  <h2 class="section-title mt-4">Технические данные</h2>
+  <p class="mt-5 max-w-2xl text-mist-200">
+    Всё, что важно знать о доске до покупки: размеры, давление, нагрузка и состав комплекта.
+  </p>
+
+  <div class="card mt-10 p-7 lg:p-9">
+    <h3 class="text-base text-water-300">Характеристики</h3>
+    <dl class="mt-5 divide-y divide-white/10">
+      {
+        specs[0].rows.map((row) => (
+          <div class="flex items-start justify-between gap-6 py-3">
+            <dt class="text-sm text-mist-300">{row[0]}</dt>
+            <dd class="text-right text-sm font-medium text-white">{row[1]}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+
+  <div id="kit" class="mt-8">
+    <h3 class="text-base text-water-300">Комплектация</h3>
+    <p class="mt-3 max-w-2xl font-display text-2xl uppercase leading-tight tracking-wide text-white sm:text-3xl">
+      Всё для выхода на воду в одной коробке
+    </p>
+
+    <div class="mt-8 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <ul class="card divide-y divide-white/10 overflow-hidden">
+        {
+          kit.map((item) => (
+            <li class="flex items-start gap-4 p-5 sm:p-6">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-flame-500/15 text-flame-300">
+                <Icon name={item.icon} class="h-5 w-5" />
+              </span>
+              <div>
+                <h4 class="font-display text-base uppercase tracking-wide text-white">{item.title}</h4>
+                <p class="mt-1 text-sm leading-relaxed text-mist-300">{item.text}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="grid gap-4">
+        <img
+          src={images.kit}
+          alt="Комплект надувной SUP-доски PRONINE Alava: доска, весло, насос, сумка и плавники"
+          class="w-full rounded-[2rem] border border-white/10 object-cover"
+          loading="lazy"
+        />
+        <img
+          src={images.infographic}
+          alt="PRONINE Alava 11'6: размер 350x84x15 см, весло из фибергласа, нагрузка на двоих"
+          class="w-full rounded-[2rem] border border-white/10 object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
